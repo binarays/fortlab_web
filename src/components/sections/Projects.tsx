@@ -9,6 +9,8 @@ import handaaWaruImg from '../../assets/artworks/Handaa Waru Ganan.png';
 import ashaMalImg from '../../assets/artworks/Aahaamal.jpeg';
 import asillakImg from '../../assets/artworks/Asillak.png';
 import mandaramImg from '../../assets/artworks/Mandaram.jpeg';
+import robarosiyanImg from '../../assets/artworks/Robarosiyan.jpeg';
+
 
 const projects = [
   {
@@ -51,7 +53,7 @@ const projects = [
     title: 'Robarosiyan',
     artist: 'Miran Archana • Prabhashana',
     year: '2023',
-    image: heenaPaanaImg,
+    image: robarosiyanImg,
   },
   {
     title: 'Mandaram',
