@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import LoadingScreen from './components/LoadingScreen';
+import Navbar from './components/common/Navbar';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Services from './components/sections/Services';
@@ -29,6 +30,7 @@ function App() {
 
       {!isLoading && (
         <div className="min-h-screen bg-black">
+          <Navbar />
           <Hero />
           <About />
           <Services />

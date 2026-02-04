@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import SectionWrapper from '../SectionWrapper';
 import SkeletonLoader from '../SkeletonLoader';
+import aboutImg from '../../assets/aboutus/aboutus.jpeg';
 
 export default function About() {
   const [isLoading, setIsLoading] = useState(true);
@@ -11,7 +12,7 @@ export default function About() {
   }, []);
 
   return (
-    <section className="py-32 px-6 bg-black">
+    <section id="about" className="py-32 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
         <SectionWrapper>
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -45,12 +46,12 @@ export default function About() {
               {isLoading ? (
                 <SkeletonLoader variant="image" className="h-96 rounded-lg" />
               ) : (
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-[#E7E8BF] opacity-20 rounded-lg transform group-hover:scale-105 transition-transform duration-500" />
+                <div className="relative">
+                  <div className="absolute inset-0 bg-[#E7E8BF] opacity-20 rounded-lg transition-transform duration-500" />
                   <img
-                    src="https://images.pexels.com/photos/164938/pexels-photo-164938.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                    src={aboutImg}
                     alt="Music Studio"
-                    className="relative rounded-lg shadow-2xl w-full h-96 object-cover transform group-hover:scale-[1.02] transition-transform duration-500"
+                    className="relative rounded-lg shadow-2xl w-full h-96 object-cover transition-transform duration-500"
                   />
                   <div className="absolute inset-0 border-2 border-[#E7E8BF] rounded-lg transform translate-x-4 translate-y-4 -z-10" />
                 </div>

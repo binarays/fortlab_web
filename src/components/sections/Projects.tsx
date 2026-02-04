@@ -9,7 +9,7 @@ import handaaWaruImg from '../../assets/artworks/Handaa Waru Ganan.png';
 import ashaMalImg from '../../assets/artworks/Aahaamal.jpeg';
 import asillakImg from '../../assets/artworks/Asillak.png';
 import mandaramImg from '../../assets/artworks/Mandaram.jpeg';
-import robarosiyanImg from '../../assets/artworks/Robarosiyan.jpeg';
+import robarosiyanImg from '../../assets/artworks/Robarosian.jpeg';
 
 
 const projects = [
@@ -111,7 +111,7 @@ export default function Projects() {
   }
 
   return (
-    <section className="py-32 bg-black overflow-hidden">
+    <section id="projects" className="py-32 bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-20 text-center">
         <SectionWrapper>
           <h2 className="text-5xl md:text-7xl font-bold text-white mb-6">
