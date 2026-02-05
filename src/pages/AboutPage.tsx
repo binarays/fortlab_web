@@ -1,11 +1,59 @@
 import SectionWrapper from '../components/SectionWrapper';
 import prabashanaImg from '../assets/team/Prabashana.jpeg';
-import galleryImg from '../assets/gallery/fortlab.jpeg';
+import aboutUsImg from '../assets/aboutus/aboutus.jpeg';
 
 export default function AboutPage() {
     return (
         <div className="pt-32 pb-20 bg-black min-h-screen overflow-x-hidden">
             <div className="max-w-7xl mx-auto px-6">
+                {/* About Us Header */}
+                <SectionWrapper>
+                    <div className="text-left mb-24">
+                        <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 tracking-tight">
+                            About <span className="text-[#E7E8BF]">Us</span>
+                        </h1>
+                    </div>
+                </SectionWrapper>
+
+                {/* About Us Content: Image Left, Text Right */}
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start mb-16">
+                    <SectionWrapper>
+                        <div className="relative group">
+                            <div className="absolute inset-0 bg-[#E7E8BF] opacity-5 rounded-3xl blur-3xl group-hover:opacity-10 transition-opacity duration-700" />
+                            <img
+                                src={aboutUsImg}
+                                alt="Fort Lab Studio Team"
+                                className="relative rounded-3xl shadow-2xl w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-700 border border-white/5"
+                            />
+                        </div>
+                    </SectionWrapper>
+
+                    <SectionWrapper>
+                        <div className="flex flex-col space-y-8 text-left">
+                            <p className="text-xl md:text-2xl text-gray-400 font-light leading-relaxed">
+                                We are a dedicated collective of experienced music producers, sound engineers, and creative artists united by a shared passion for transforming ideas into powerful, immersive sonic experiences. With years of hands-on industry expertise, our team has collaborated with a wide range of artists, brands, filmmakers, and content creators, working confidently across multiple genres and formats. This diversity has shaped our adaptable approach and sharpened our ability to bring unique creative visions to life.
+                            </p>
+                            <p className="text-xl md:text-2xl text-gray-400 font-light leading-relaxed">
+                                At the core of our studio is a deep commitment to innovation, quality, and artistic integrity. We believe that great sound is created at the intersection of technical excellence and inspired creativity. By combining cutting-edge technology with refined, intentional creative processes, we ensure every project meets the highest professional standards while maintaining its emotional impact and authenticity.
+                            </p>
+                        </div>
+                    </SectionWrapper>
+                </div>
+
+                {/* About Us Content: Workflow and Vision */}
+                <div className="mb-32">
+                    <SectionWrapper>
+                        <div className="flex flex-col space-y-8 text-left">
+                            <p className="text-xl md:text-2xl text-gray-400 font-light leading-relaxed">
+                                Our workflow is built around collaboration and precision. We take the time to understand each client’s goals, aesthetic, and audience, allowing us to craft tailored solutions that enhance the identity of every project. From music production and sound design to mixing and mastering, we focus on clarity, depth, and detail in every stage of the process.
+                            </p>
+                            <p className="text-xl md:text-2xl text-gray-400 font-light leading-relaxed">
+                                Driven by curiosity and a constant desire to evolve, our studio remains forward-thinking and adaptable in an ever-changing industry. Whether developing original music, refining a brand’s sonic identity, or elevating an artist’s sound, we are committed to delivering polished, impactful results that resonate long after the final note.
+                            </p>
+                        </div>
+                    </SectionWrapper>
+                </div>
+
                 {/* Header */}
                 <SectionWrapper>
                     <div className="text-left mb-24">
@@ -40,9 +88,9 @@ export default function AboutPage() {
                     </SectionWrapper>
                 </div>
 
-                {/* Row 2: Text Left, Image Right */}
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center mb-32">
-                    <SectionWrapper className="order-2 lg:order-1">
+                {/* Row 2: Full Width Text */}
+                <div className="mb-32">
+                    <SectionWrapper>
                         <div className="flex flex-col space-y-8 text-left">
                             <p className="text-xl md:text-2xl text-gray-400 font-light leading-relaxed">
                                 Today, Fort Lab works closely with upcoming and emerging artists, offering industry-standard music production, mentorship, and a complete end-to-end creative experience. We focus not only on sound, but on helping artists understand the industry, develop their identity, and grow with confidence.
@@ -55,17 +103,6 @@ export default function AboutPage() {
                                     Growth with confidence.
                                 </p>
                             </div>
-                        </div>
-                    </SectionWrapper>
-
-                    <SectionWrapper className="order-1 lg:order-2">
-                        <div className="relative group">
-                            <div className="absolute inset-0 bg-[#E7E8BF] opacity-5 rounded-3xl blur-3xl group-hover:opacity-10 transition-opacity duration-700" />
-                            <img
-                                src={galleryImg}
-                                alt="Fort Lab Gallery"
-                                className="relative rounded-3xl shadow-2xl w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-[1.02] border border-white/5"
-                            />
                         </div>
                     </SectionWrapper>
                 </div>
