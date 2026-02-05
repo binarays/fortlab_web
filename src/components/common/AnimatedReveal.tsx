@@ -21,8 +21,8 @@ const AnimatedReveal: React.FC<AnimatedRevealProps> = ({ children, delay = 0, di
         transition: {
             duration: 0.8,
             delay: delay,
-            ease: [0.22, 1, 0.36, 1], // Custom easing for smooth feel
-        },
+            ease: [0.22, 1, 0.36, 1],
+        } as any,
     };
 
     return (

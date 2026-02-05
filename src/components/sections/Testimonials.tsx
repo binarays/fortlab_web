@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import SectionWrapper from '../SectionWrapper';
 import { SkeletonCard } from '../SkeletonLoader';
 
@@ -62,7 +62,7 @@ export default function Testimonials() {
       const isScrollingRight = e.deltaY > 0;
 
       const canScrollLeft = scrollLeft > 0;
-      const canScrollRight = scrollLeft < scrollWidth - clientWidth - 1; // -1 for sub-pixel issues
+      const canScrollRight = scrollLeft < scrollWidth - clientWidth - 1;
 
       if ((isScrollingLeft && canScrollLeft) || (isScrollingRight && canScrollRight)) {
         e.preventDefault();
@@ -91,7 +91,7 @@ export default function Testimonials() {
             <h2 className="text-5xl md:text-7xl font-bold text-white mb-6">
               Voices of <span className="text-[#E7E8BF]">Collaboration</span>
             </h2>
-            <p className="text-lg text-gray-500 font-light max-w-2xl mx-auto">
+            <p className="text-lg text-gray-400 font-light max-w-2xl mx-auto">
               Our clients are our greatest collaborators. Here's what they say about their experience at Fort Lab.
             </p>
           </div>
@@ -106,19 +106,21 @@ export default function Testimonials() {
           ? Array.from({ length: 6 }).map((_, i) => (
             <div key={i} className="min-w-[350px] md:min-w-[450px] snap-center">
               <SectionWrapper delay={i * 0.1} className="h-full w-full">
-                <SkeletonCard />
+                <div className="w-full bg-[#0A0D14] p-10 rounded-2xl border border-white/5">
+                  <SkeletonCard />
+                </div>
               </SectionWrapper>
             </div>
           ))
           : testimonials.map((testimonial, index) => (
-            <div key={testimonial.name} className="min-w-[320px] md:min-w-[450px] snap-center py-4 flex">
+            <div key={testimonial.name} className="min-w-[320px] md:min-w-[500px] snap-center py-4 flex">
               <SectionWrapper delay={index * 0.1} className="h-full w-full">
-                <div className="group relative bg-[#0A0D14] border border-white/5 p-10 rounded-2xl hover:border-[#E7E8BF]/30 transition-all duration-500 h-full flex flex-col shadow-2xl shadow-black/50">
+                <div className="group relative bg-[#0A0D14] border border-white/5 p-10 rounded-2xl hover:border-[#E7E8BF]/30 transition-all duration-500 h-full flex flex-col shadow-2xl shadow-black/50 w-full overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-[#E7E8BF]/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
                   <div className="relative z-10 flex flex-col h-full">
                     {/* Avatar */}
-                    <div className="w-16 h-16 rounded-full overflow-hidden mb-10 border border-white/10 group-hover:border-[#E7E8BF]/50 transition-colors duration-500">
+                    <div className="w-16 h-16 rounded-full overflow-hidden mb-8 border border-white/10 group-hover:border-[#E7E8BF]/50 transition-colors duration-500">
                       <img
                         src={testimonial.avatar}
                         alt={testimonial.name}
@@ -127,12 +129,12 @@ export default function Testimonials() {
                     </div>
 
                     {/* Content */}
-                    <p className="text-gray-300 text-lg font-light leading-relaxed mb-12 flex-grow">
+                    <p className="text-gray-300 text-lg font-light leading-relaxed mb-auto">
                       "{testimonial.review}"
                     </p>
 
                     {/* Author */}
-                    <div className="mt-auto">
+                    <div className="mt-12">
                       <h4 className="text-2xl font-bold text-white mb-1 tracking-tight">
                         {testimonial.name}
                       </h4>

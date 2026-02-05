@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import logoWhite from '../../assets/logos/FORTLAB_LOGO_WHITE.png';
 
 const navLinks = [
-    { name: 'Home', href: '#hero' },
+    { name: 'Home', href: '/' },
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Projects', href: '#projects' },
@@ -15,6 +16,8 @@ const navLinks = [
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -24,13 +27,29 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
-        const element = document.querySelector(href);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-            setIsMobileMenuOpen(false);
+
+        if (href.startsWith('#')) {
+            if (location.pathname !== '/') {
+                navigate('/');
+                setTimeout(() => {
+                    const element = document.querySelector(href);
+                    element?.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            } else {
+                const element = document.querySelector(href);
+                element?.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            if (location.pathname !== href) {
+                navigate(href);
+                window.scrollTo({ top: 0, behavior: 'instant' });
+            } else if (href === '/') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         }
+        setIsMobileMenuOpen(false);
     };
 
     return (
@@ -40,8 +59,8 @@ export default function Navbar() {
         >
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                 <a
-                    href="#hero"
-                    onClick={(e) => scrollToSection(e, '#hero')}
+                    href="/"
+                    onClick={(e) => handleNavClick(e, '/')}
                     className="flex items-center gap-2 group"
                 >
                     <img
@@ -57,8 +76,9 @@ export default function Navbar() {
                         <a
                             key={link.name}
                             href={link.href}
-                            onClick={(e) => scrollToSection(e, link.href)}
-                            className="text-sm font-medium text-gray-300 hover:text-[#E7E8BF] transition-colors duration-300 uppercase tracking-widest px-2 py-1 relative group"
+                            onClick={(e) => handleNavClick(e, link.href)}
+                            className={`text-sm font-medium transition-colors duration-300 uppercase tracking-widest px-2 py-1 relative group ${location.pathname === link.href ? 'text-[#E7E8BF]' : 'text-gray-300 hover:text-[#E7E8BF]'
+                                }`}
                         >
                             {link.name}
                         </a>
@@ -88,8 +108,9 @@ export default function Navbar() {
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    onClick={(e) => scrollToSection(e, link.href)}
-                                    className="text-xl font-semibold text-white hover:text-[#E7E8BF] transition-colors uppercase tracking-widest"
+                                    onClick={(e) => handleNavClick(e, link.href)}
+                                    className={`text-xl font-semibold transition-colors uppercase tracking-widest ${location.pathname === link.href ? 'text-[#E7E8BF]' : 'text-white hover:text-[#E7E8BF]'
+                                        }`}
                                 >
                                     {link.name}
                                 </a>

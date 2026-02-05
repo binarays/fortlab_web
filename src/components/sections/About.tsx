@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import SectionWrapper from '../SectionWrapper';
 import SkeletonLoader from '../SkeletonLoader';
 import aboutImg from '../../assets/aboutus/aboutus.jpeg';
@@ -30,14 +32,18 @@ export default function About() {
                     About <span className="text-[#E7E8BF]">Us</span>
                   </h2>
                   <p className="text-lg text-gray-400 font-light leading-relaxed mb-6">
-                    We are a team of passionate music producers, sound engineers, and creative
-                    artists dedicated to transforming ideas into sonic masterpieces.
+                    We are a dedicated team of experienced music producers, sound engineers, and creative artists focused on transforming ideas into compelling sonic experiences. With years of industry expertise, we have collaborated with a diverse range of artists, brands, and creators across multiple genres.
                   </p>
-                  <p className="text-lg text-gray-400 font-light leading-relaxed">
-                    With years of experience in the industry, we've worked with artists across
-                    genres, creating everything from chart-topping hits to powerful film scores.
-                    Our studio is where innovation meets artistry.
+                  <p className="text-lg text-gray-400 font-light leading-relaxed mb-10">
+                    At the core of our studio is a commitment to innovation, quality, and artistic integrity. We combine cutting-edge technology with refined creative processes to deliver polished, impactful results tailored to each project’s unique vision.
                   </p>
+                  <Link
+                    to="/about"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-[#E7E8BF] text-black font-bold rounded-full hover:bg-white transition-all duration-300 group"
+                  >
+                    READ MORE
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </>
               )}
             </div>
