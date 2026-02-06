@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import SectionWrapper from '../SectionWrapper';
 
 // Import images
 import heenaPaanaImg from '../../assets/artworks/Heena paarana.jpeg';
@@ -113,11 +112,9 @@ export default function Projects() {
   return (
     <section id="projects" className="py-32 bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-20 text-center">
-        <SectionWrapper>
-          <h2 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            Our <span className="text-[#E7E8BF]">Projects</span>
-          </h2>
-        </SectionWrapper>
+        <h2 className="text-5xl md:text-7xl font-bold text-white mb-6">
+          Our <span className="text-[#E7E8BF]">Projects</span>
+        </h2>
       </div>
 
       <div className="relative space-y-12">

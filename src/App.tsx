@@ -7,6 +7,9 @@ import Footer from './components/sections/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ScrollToTop from './components/ScrollToTop';
+import SpotifyPlayer from './components/SpotifyPlayer';
+import ScrollToTopButton from './components/ScrollToTopButton';
+import WhatsAppPopup from './components/WhatsAppPopup';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,6 +32,9 @@ function App() {
       {!isLoading && (
         <div className="min-h-screen bg-black">
           <Navbar />
+          <SpotifyPlayer />
+          <ScrollToTopButton />
+          <WhatsAppPopup />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />

@@ -1,6 +1,6 @@
 import SectionWrapper from '../components/SectionWrapper';
 import prabashanaImg from '../assets/team/Prabashana.jpeg';
-import aboutUsImg from '../assets/aboutus/aboutus.jpeg';
+import aboutUsImg from '../assets/aboutus/aboutus.webp';
 
 export default function AboutPage() {
     return (

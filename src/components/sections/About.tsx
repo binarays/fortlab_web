@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import SectionWrapper from '../SectionWrapper';
 import SkeletonLoader from '../SkeletonLoader';
-import aboutImg from '../../assets/aboutus/aboutus.jpeg';
+import aboutImg from '../../assets/aboutus/aboutus.webp';
 
 export default function About() {
   const [isLoading, setIsLoading] = useState(true);
