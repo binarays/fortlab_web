@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, MessageCircle } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 const FlutePlayer = () => (
     <motion.svg
@@ -40,6 +41,7 @@ const FlutePlayer = () => (
 );
 
 const WhatsAppPopup = () => {
+    const location = useLocation();
     const [isExpanded, setIsExpanded] = useState(true);
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -58,6 +60,8 @@ const WhatsAppPopup = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    if (location.pathname === '/about') return null;
 
     const whatsappUrl = "https://wa.me/94704813885";
 

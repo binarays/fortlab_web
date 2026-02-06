@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Music } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 const SpotifyPlayer = () => {
+    const location = useLocation();
     const [isExpanded, setIsExpanded] = useState(true);
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -21,6 +23,8 @@ const SpotifyPlayer = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    if (location.pathname === '/about') return null;
 
     return (
         <div className="fixed bottom-6 left-6 z-[60] pointer-events-none">

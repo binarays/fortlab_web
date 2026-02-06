@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
@@ -14,18 +14,11 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-    const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+
 
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
@@ -54,10 +47,9 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-black/80 backdrop-blur-md py-6 shadow-[0_4px_30px_rgba(0,0,0,0.1)]' : 'bg-transparent py-8'
-                }`}
+            className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 rounded-full bg-black/60 backdrop-blur-md border border-white/10 py-6 shadow-xl transition-all duration-500"
         >
-            <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <div className="px-8 flex items-center justify-between">
                 <a
                     href="/"
                     onClick={(e) => handleNavClick(e, '/')}

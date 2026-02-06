@@ -7,7 +7,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    website: '',
+
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -20,7 +20,7 @@ export default function Contact() {
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
-      setFormData({ name: '', email: '', website: '', message: '' });
+      setFormData({ name: '', email: '', message: '' });
 
       setTimeout(() => setSubmitted(false), 3000);
     }, 1500);
@@ -45,7 +45,7 @@ export default function Contact() {
                   Contact <span className="text-[#E7E8BF]">Us</span>
                 </h2>
                 <p className="text-xl text-gray-400 font-light leading-relaxed max-w-lg">
-                  We are committed to processing the information in order to contact you and talk about your project.
+                  Contact our studio for bookings, collaborations, and turning your sound into something unforgettable.
                 </p>
               </div>
 
@@ -69,8 +69,8 @@ export default function Contact() {
                   <div>
                     <p className="text-gray-500 text-sm mb-1">Our Location</p>
                     <p className="text-lg font-medium text-white">
-                      4074 Ebert Summit Suite 375<br />
-                      Lake Leonardchester
+                      Negombo<br />
+                      Sri Lanka
                     </p>
                   </div>
                 </div>
@@ -82,7 +82,7 @@ export default function Contact() {
                   <div>
                     <p className="text-gray-500 text-sm mb-1">Call us</p>
                     <a href="tel:+441236547890" className="text-lg font-medium text-white hover:text-[#E7E8BF] transition-colors">
-                      +44 123 654 7890
+                      +94 70 481 3885
                     </a>
                   </div>
                 </div>
@@ -121,19 +121,7 @@ export default function Contact() {
                 />
               </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-semibold text-gray-300">
-                  Website<span className="text-red-500 ml-1">*</span>
-                </label>
-                <input
-                  type="url"
-                  name="website"
-                  value={formData.website}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-zinc-900/50 border border-white/10 rounded-md text-white focus:border-[#E7E8BF] focus:ring-1 focus:ring-[#E7E8BF] outline-none transition-all duration-300"
-                />
-              </div>
+
 
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-gray-300">

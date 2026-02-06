@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Facebook, Instagram } from 'lucide-react';
+import backgroundImage from '../../assets/background/fortlab_background.jpg';
 
 export default function Hero() {
   const SpotifyIcon = ({ size = 20 }: { size?: number }) => (
@@ -15,8 +16,22 @@ export default function Hero() {
   );
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      />
+
+      {/* Black Overlay */}
+      <div className="absolute inset-0 bg-black/60 z-[1]" />
+
+      <div className="absolute inset-0 opacity-10 z-[2]">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#E7E8BF] rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#E7E8BF] rounded-full blur-3xl" />
       </div>
@@ -26,7 +41,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight mt-12 md:mt-20"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight mt-12 md:mt-20 drop-shadow-2xl"
+          style={{ textShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
         >
           Where Sound Meets
           <span className="block text-[#E7E8BF] mt-2">Creativity</span>
@@ -36,7 +52,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg md:text-xl text-gray-400 mb-12 font-light max-w-2xl mx-auto"
+          className="text-lg md:text-xl text-gray-200 mb-12 font-light max-w-2xl mx-auto drop-shadow-lg"
+          style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
         >
           Crafting sonic experiences that resonate. From production to mastering,
           we bring your musical vision to life.
@@ -62,7 +79,11 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: 0.7 + (index * 0.1) }}
-              whileHover={{ scale: 1.1, color: '#E7E8BF' }}
+              whileHover={{
+                scale: 1.1,
+                color: '#000000',
+                transition: { duration: 0 }
+              }}
               className="w-14 h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-full text-gray-400 hover:text-black hover:bg-[#E7E8BF] hover:border-[#E7E8BF] transition-all duration-300 shadow-xl"
               aria-label={social.label}
             >
