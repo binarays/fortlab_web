@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/fortlab_web/">
       <ScrollToTop />
       <AnimatePresence mode="wait">
         {isLoading && <LoadingScreen key="loading" />}
