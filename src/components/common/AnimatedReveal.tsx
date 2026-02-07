@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Transition } from 'framer-motion';
 
 interface AnimatedRevealProps {
     children: React.ReactNode;
@@ -22,7 +22,7 @@ const AnimatedReveal: React.FC<AnimatedRevealProps> = ({ children, delay = 0, di
             duration: 0.8,
             delay: delay,
             ease: [0.22, 1, 0.36, 1],
-        } as any,
+        } as Transition,
     };
 
     return (
