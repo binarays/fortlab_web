@@ -28,7 +28,7 @@ const Gallery = () => {
                     </div>
                 </SectionWrapper>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
                     {galleryImages.map((image, index) => (
                         <SectionWrapper key={image.id} delay={index * 0.1}>
                             <motion.div
@@ -36,8 +36,7 @@ const Gallery = () => {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.5 }}
                                 viewport={{ once: true }}
-                                whileHover={{ scale: 1.05 }}
-                                className="relative aspect-[4/5] overflow-hidden rounded-xl border border-white/10 group bg-white/5 backdrop-blur-sm"
+                                className="relative aspect-[4/4] overflow-hidden border border-white/10 group bg-white/5 backdrop-blur-sm"
                             >
                                 <img
                                     src={image.src}

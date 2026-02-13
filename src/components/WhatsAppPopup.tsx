@@ -42,10 +42,18 @@ const FlutePlayer = () => (
 
 const WhatsAppPopup = () => {
     const location = useLocation();
+    const [isMobile, setIsMobile] = useState(false);
     const [isExpanded, setIsExpanded] = useState(true);
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
             if (currentScrollY > 50) {
@@ -58,10 +66,13 @@ const WhatsAppPopup = () => {
         };
 
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', checkMobile);
+        };
     }, []);
 
-    if (location.pathname === '/about') return null;
+    if (isMobile || location.pathname === '/about') return null;
 
     const whatsappUrl = "https://wa.me/94704813885";
 

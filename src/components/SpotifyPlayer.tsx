@@ -5,10 +5,18 @@ import { useLocation } from 'react-router-dom';
 
 const SpotifyPlayer = () => {
     const location = useLocation();
+    const [isMobile, setIsMobile] = useState(false);
     const [isExpanded, setIsExpanded] = useState(true);
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
             if (currentScrollY > 50) {
@@ -21,10 +29,13 @@ const SpotifyPlayer = () => {
         };
 
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', checkMobile);
+        };
     }, []);
 
-    if (location.pathname === '/about') return null;
+    if (isMobile || location.pathname === '/about') return null;
 
     return (
         <div className="fixed bottom-6 left-6 z-[60] pointer-events-none">

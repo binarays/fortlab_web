@@ -2,48 +2,39 @@ import { useRef, useState, useEffect } from 'react';
 import SectionWrapper from '../SectionWrapper';
 import { SkeletonCard } from '../SkeletonLoader';
 
+import banuraImg from '../../assets/feedbacks/banura.jpeg';
+import lakshanImg from '../../assets/feedbacks/lakshan_daluwatta.jpeg';
+import dinethImg from '../../assets/feedbacks/dineth_fernando.jpeg';
+import kavishkaImg from '../../assets/feedbacks/kavishka_warnakula.jpeg';
+
 const testimonials = [
   {
     name: 'Banura Sathurusinghe',
-    role: 'Recording Artist & Producer',
+    role: 'Artist',
     review:
-      'The lovely team at Fort Lab has provided our project with significant leverage. Their work is exceptionally professional, and Supun is always attentive to our needs, taking the time to understand our briefs and offer valuable direction.',
-    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Banura',
+      "Thank you so much for your incredible production and mix mastering on “Heena Paarana” and “Unmadini,” Prabhashana. You truly brought them to life with a polished, professional sound, perfectly capturing the emotion and vision. I deeply appreciate your dedication and care.",
+    avatar: banuraImg,
   },
   {
-    name: 'Miran Archana',
-    role: 'Composer & Musician',
+    name: 'Lakshan Daluwatta',
+    role: 'Artist',
     review:
-      'Professional, creative, and incredibly talented. They brought our vision to life beyond our expectations. Their turnaround times are impressively fast, and the sonic quality is simply world-class.',
-    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Miran',
+      'Working with Fort Lab Studios has been incredible. Supun Prabhashana composed Kawadada Ithin and Thol Pethi (Acoustic Reprise), delivering beyond expectations. He’s talented, chill, intuitive, and knows how to make tracks hit. I recommend him.',
+    avatar: lakshanImg,
   },
   {
-    name: 'Manula Nipun',
-    role: 'Indie Artist',
+    name: 'Dineth Fernando',
+    role: 'Animation Artist',
     review:
-      'Working with Fort Lab transformed our sound completely. The attention to detail and creative direction was exceptional. Every track sounds pristine, radio-ready, and carries a unique character.',
-    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Manula',
+      'I had a 10/10 experience at Fortlab Studios for my college project. Prabashana was kind, welcoming, attentive, and incredibly talented, delivering top-quality music in a comfortable, professional studio. I highly recommend them for music production needs.',
+    avatar: dinethImg,
   },
   {
-    name: 'Kushan FDO',
-    role: 'Film Director',
+    name: 'Kavishka Warnakula',
+    role: 'Filmmaker based in UK',
     review:
-      'Their film scoring work added so much depth and emotion to our project. Truly remarkable artists who understand the language of cinema and sound perfectly. A pleasure to collaborate with.',
-    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Kushan',
-  },
-  {
-    name: 'Miuru Fernando',
-    role: 'Professional Cellist',
-    review:
-      'From start to finish, the production process was smooth and the results were absolutely stunning. Their technical understanding and artistic sensibility make them stand out in the industry.',
-    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Miuru',
-  },
-  {
-    name: 'Mahiru Senarathne',
-    role: 'Vocalist',
-    review:
-      'An incredible team that understands music at its core. They deliver excellence every single time, ensuring the artist\'s original vision is preserved while being elevated to professional standards.',
-    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Mahiru',
+      'Collaborating with Supun on my short film Heard in Silence was truly rewarding. His score brought emotional depth, capturing its tone and atmosphere. He approaches storytelling with sensitivity and professionalism, and I anticipate projects together.',
+    avatar: kavishkaImg,
   },
 ];
 
@@ -129,12 +120,12 @@ export default function Testimonials() {
                     </div>
 
                     {/* Content */}
-                    <p className="text-gray-300 text-lg font-light leading-relaxed mb-auto">
+                    <p className="text-gray-300 text-lg font-light leading-relaxed mb-6">
                       "{testimonial.review}"
                     </p>
 
                     {/* Author */}
-                    <div className="mt-12">
+                    <div className="mt-0">
                       <h4 className="text-2xl font-bold text-white mb-1 tracking-tight">
                         {testimonial.name}
                       </h4>

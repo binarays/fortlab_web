@@ -63,9 +63,9 @@ const projects = [
 ];
 
 const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => (
-  <div className="w-[300px] md:w-[400px] flex-shrink-0 mx-4">
+  <div className="w-[300px] md:w-[400px] flex-shrink-0 mx-2">
     <div className="group relative overflow-hidden bg-zinc-900/50 border border-gray-800 hover:border-[#E7E8BF] transition-all duration-500 rounded-2xl">
-      <div className="relative aspect-[4/5] overflow-hidden">
+      <div className="relative aspect-[4/4] overflow-hidden">
         <img
           src={project.image}
           alt={project.title}
@@ -117,7 +117,7 @@ export default function Projects() {
         </h2>
       </div>
 
-      <div className="relative space-y-12">
+      <div className="relative space-y-6">
         {/* Row 1 - Right to Left */}
         <div className="flex overflow-hidden">
           <div className="flex animate-marquee whitespace-nowrap">
