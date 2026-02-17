@@ -10,19 +10,19 @@ import nimodhImg from '../../assets/team/Nimodh.jpeg';
 const team = [
   {
     name: 'Supun Prabhashana',
-    role: 'Lead Producer',
+    role: 'Founder • Composer • Producer',
     image: prabashanaImg,
     bio: 'Supun Prabhashana is the founder of Fort Lab and an indie music composer and producer in the Sri Lankan music industry. He has worked with artists like Mahiru Senarathne and Kavishanke Adithya, handling music production, composition, and mix & mastering with a unique blend of cinematic and Sri Lankan sounds.',
   },
   {
     name: 'Miuru Fernando',
-    role: 'Sound Engineer',
+    role: 'Arranger • Cellist',
     image: miuruImg,
     bio: 'Miuru Fernando is a Sri Lankan multi-instrumentalist with 15+ years of experience and an ABRSM-registered tutor. Known for his advanced technical understanding of audio engineering, he shapes the sonic identity of Fort Lab through intricate string arrangements and musicality.',
   },
   {
     name: 'Nimodh Ruwantha',
-    role: 'Composer & Creative Lead',
+    role: 'Drummer • Percussionist',
     image: nimodhImg,
     bio: 'Nimodh Ruwantha is a professional recording session player with 8+ years of experience, specializing in funk and pop. At Fort Lab, Nimodh is the creative force behind all drum and percussion arrangements, bringing groove, energy, and precision to every production.',
   },

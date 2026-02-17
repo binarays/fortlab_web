@@ -57,7 +57,7 @@ export default function Contact() {
                   <div>
                     <p className="text-gray-500 text-sm mb-1">Email us</p>
                     <a href="mailto:hello@fortlab.com" className="text-lg font-medium text-white hover:text-[#E7E8BF] transition-colors">
-                      hello@fortlab.com
+                      fortlabstudios@gmail.com
                     </a>
                   </div>
                 </div>

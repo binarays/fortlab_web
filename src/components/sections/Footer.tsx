@@ -118,7 +118,7 @@ export default function Footer() {
             </span>
             <span className="hidden md:block w-px h-3 bg-white/10"></span>
             <span className="text-gray-500 text-xs font-light tracking-widest uppercase">
-              Designed & Developed by <span className="text-[#E7E8BF] font-medium">Binara Wijewickrama</span>
+              Designed & Developed by <span className="text-[#E7E8BF] font-medium">Fontage Global</span>
             </span>
           </div>
           <div className="flex items-center gap-8">

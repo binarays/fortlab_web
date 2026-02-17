@@ -85,7 +85,7 @@ export default function Services() {
                       href="#contact"
                       whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(231, 232, 191, 0.2)' }}
                       whileTap={{ scale: 0.95 }}
-                      className="px-6 py-2.5 bg-[#E7E8BF] text-black text-xs font-black rounded-full transition-all duration-300 tracking-widest"
+                      className="px-6 py-2.5 bg-[#E7E8BF] text-black text-xs font-medium transition-all duration-300 tracking-widest"
                     >
                       BOOK NOW
                     </motion.a>

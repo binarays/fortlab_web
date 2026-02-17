@@ -28,11 +28,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-4 tracking-tight mt-0 md:mt-10 drop-shadow-2xl"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight mt-0 md:mt-10 drop-shadow-2xl"
           style={{ textShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
         >
-          Where Sound Brings
-          <span className="block text-[#E7E8BF] mt-2">Healing</span>
+          Where your sound finally
+          <span className="block text-[#E7E8BF] mt-2">feels right.</span>
         </motion.h1>
 
         <motion.p
@@ -42,8 +42,7 @@ export default function Hero() {
           className="text-lg md:text-xl text-gray-200 mb-8 font-light max-w-2xl mx-auto drop-shadow-lg"
           style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
         >
-          Crafting sonic experiences that resonate. From production to mastering,
-          we bring your musical vision to life.
+          A cosy home studio where we create music productions, mix & masters, and craft film scores and commercial scores.
         </motion.p>
 
         <motion.div
