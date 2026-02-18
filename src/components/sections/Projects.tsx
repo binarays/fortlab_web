@@ -37,7 +37,7 @@ const projects = [
     image: handaaWaruImg,
   },
   {
-    title: 'Asha Mal',
+    title: 'Aha Mal',
     artist: 'Rohan De Silva • Hector Wijesiri • Prabhashana',
     year: '2024',
     image: ashaMalImg,
